@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Convert Text to Lowercase</title>
+    <script>
+        function convertToLowerCase() {  
+            let userInput = document.getElementById("inputText").value;          
+            let lowercaseText = userInput.toLowerCase();
+            document.getElementById("result").innerText = "Lowercase: " + lowercaseText;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Convert Uppercase Text to Lowercase</h1>
+    <form onsubmit="return convertToLowerCase();">
+        <label for="inputText">Enter uppercase text:</label>
+        <input type="text" id="inputText" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <p id="result"></p>
+</body>
+</html>
