@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Fill the Form</h2>
+    <form onsubmit="return validate()">
+        <label for="name">Enter your Name:</label><br>
+        <input type="text" id="name" placeholder="Name" required><br><br>
+
+        <label for="mobile">Enter your Mobile Number:</label><br>
+        <input type="text" id="mobile" placeholder="Mobile No" required><br><br>
+
+        <label for="email">Enter your Email:</label><br>
+        <input type="email" id="email" placeholder="Email" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validate() {
+            let name = document.getElementById("name").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            if (name === "" || /[^a-zA-Z\s]/.test(name)) {
+                alert("Invalid Name. Only letters and spaces allowed.");
+                return false;
+            }
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("Invalid Mobile. Enter a 10-digit number.");
+                return false;
+            }
+
+            if (email.indexOf('@') === -1 || email.indexOf('.') === -1 || email.indexOf('@') > email.indexOf('.')) {
+                alert("Invalid Email.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    
+</body>
+</html>
